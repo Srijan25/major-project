@@ -2,6 +2,8 @@
 import React, { useEffect, useState } from "react";
 import "./styles/login.css";
 import logingif from "../assests/login.gif"
+import axios from "axios";
+import swal from 'sweetalert';
 
 
 const Login = () => {
@@ -21,7 +23,34 @@ const Login = () => {
 
     const submitForm = (e) => {
         e.preventDefault();
-        console.log(data);
+        axios.post("http://localhost:8080/api/users/login", data).then((res) => {
+        console.log(res.data);
+        localStorage.setItem("token", res.data.token);
+        localStorage.setItem("name", res.data.name); 
+        localStorage.setItem("userId", res.data.userId);
+        localStorage.setItem("role", res.data.role);
+        
+
+        if (res.data.role === "student") {
+            window.location.href = "/student";
+        }
+        if (res.data.role === "teacher") {
+            window.location.href = "/teacher";
+        }
+        if (res.data.role === "parent") {
+            window.location.href = "/parent";
+        }
+        
+        }).catch((err) => {
+            console.log(err);
+            swal({
+                title: "Invalid Credentials",
+                text: "Please enter valid credentials",
+                icon: "error",
+                button: "Ok",
+              });
+        }
+        );
     };
 
     
