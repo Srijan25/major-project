@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Tangerine');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lobster&family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lobster&family=Pacifico&display=swap');
+
+/* font-family: 'Dancing Script', cursive;
+font-family: 'Lobster', cursive;
+font-family: 'Pacifico', cursive; */
+
+
+*{
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+body{
+  font-family: sans-serif;
+  background-image: url('../../assests/portal.gif');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.container{
+  padding: 18px;
+  width: 100%;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.2);
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container li{
+  list-style: none;
+  display: inline;
+}
+.container li a{
+  text-decoration: none;
+  padding: 14px 20px;
+  font-size: 16px;
+  color: #f2f2f2;
+  display: inline-block;
+  text-align: center;
+  letter-spacing: 1px;
+  transition: all .3s ease-in;
+  font-family: 'Dancing Script', cursive;
+
+  font-family: 'Lobster', cursive;
+
+  font-family: 'Pacifico', cursive;
+  font-size: 20px;
+  text-shadow: 4px 4px 4px #aaa;
+}
+.container li a:hover{
+  color: black;
+    background-color: #f2f2f2;
+    border-radius: 15px;
+
+}
