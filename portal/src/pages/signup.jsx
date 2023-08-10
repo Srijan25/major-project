@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "./styles/login.css";
 import loginimg from "../assests/login.gif";
+import axios from "axios";
+import swal from "sweetalert";
 
 
 
@@ -24,7 +26,21 @@ const Signup = () => {
 
     const submitForm = (e) => {
         e.preventDefault();
-        console.log(data);
+       axios.post("http://localhost:8080/api/users/signup", data)
+        .then((res) => {
+            console.log(res);
+            swal("Success", "User Registered Successfully", "success");
+            window.location.href = "/login";
+        }
+        )
+        .catch((err) => {
+            console.log(err);
+            swal("Error", "User Already Exists", "error");
+        }
+        );
+
+        
+
     };
   
 
