@@ -1,21 +1,24 @@
 import { Routes, Route } from 'react-router-dom';
-import login from './pages/login';
-import signup from './pages/signup';
-import  student  from './pages/student';
-import  teacher  from './pages/teacher';
-import parent from './pages/parent';
-import home from './pages/home';
+import Login from './pages/login';
+import Signup from './pages/signup';
+import  Student  from './pages/student';
+import  Teacher  from './pages/teacher';
+import Parent from './pages/parent';
+import Home from './pages/home';
+import Navbar from './pages/navbar';
 function App() {
   return (
+    <>
+    <Navbar/>
     <Routes>
-      <Route path="/login" Component={login} />
-      <Route path="/signup" Component={signup} />
-      <Route path="/student" Component={student} />
-      <Route path="/teacher" Component={teacher} />
-      <Route path="/parent" Component={parent} />
-      <Route path="/" Component={home} />
+      <Route path="/login" Component={Login} />
+      <Route path="/signup" Component={Signup} />
+      <Route path="/student" Component={Student} />
+      <Route path="/teacher" Component={Teacher} />
+      <Route path="/parent" Component={Parent} />
+      <Route path="/" Component={Home} />
     </Routes>
-      
+      </>
    
   );
 }

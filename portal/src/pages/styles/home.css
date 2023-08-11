@@ -19,40 +19,52 @@ body{
   background-size: cover;
   background-repeat: no-repeat;
 }
-.container{
-  padding: 18px;
-  width: 100%;
-  overflow: hidden;
-  background-color: rgba(0, 0, 0, 0.2);
-  height: 100px;
+
+.intro {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  height: 100vh;
+  
 }
-.container li{
-  list-style: none;
-  display: inline;
-}
-.container li a{
-  text-decoration: none;
-  padding: 14px 20px;
-  font-size: 16px;
-  color: #f2f2f2;
-  display: inline-block;
+
+.intro-text {
   text-align: center;
-  letter-spacing: 1px;
-  transition: all .3s ease-in;
-  font-family: 'Dancing Script', cursive;
-
-  font-family: 'Lobster', cursive;
-
-  font-family: 'Pacifico', cursive;
-  font-size: 20px;
-  text-shadow: 4px 4px 4px #aaa;
+  animation: fadeInUp 1.5s ease-out;
 }
-.container li a:hover{
-  color: black;
-    background-color: #f2f2f2;
-    border-radius: 15px;
 
+.intro-text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.intro-text p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

@@ -1,20 +1,20 @@
 import React from 'react'
-import portal from '../assests/portal.gif';
 import './styles/home.css';
 
 
 const home = () => {
     return (
+        <>
         
-        <div class="container">
-		<ul>
-			<li><a href="#">Home</a></li>
-			<li><a href="#">Attendance</a></li>
-			<li><a href="#">Grade</a></li>
-			<li><a href="#">News</a></li>
-			<li><a href="#">Login</a></li>
-		</ul>
-	</div>
+    <div className="intro">
+        <div className="intro-text">
+            <h1>Supervision Portal</h1>
+            <p>Supervision Portal is a web application that allows students to check their attendance, grades, and news.</p>
+            <a href="signup" className="btn">Sign Up</a>
+        </div>
+
+    </div>
+    </>
 
 
             
