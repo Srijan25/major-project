@@ -5,10 +5,8 @@
 
 .container{
   padding: 18px;
-  width: 100%;
+  
   overflow: hidden;
-  background-color: rgba(0, 0, 0, 0.2);
-  height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;

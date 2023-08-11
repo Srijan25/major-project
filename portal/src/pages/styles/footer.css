@@ -1,6 +1,9 @@
 .footer-clean {
     padding:50px 0;
     color:#f2f4f6;
+    background-color:#0202028d;
+    position: relative;
+    bottom: 0px;
   }
   
   .footer-clean h3 {
