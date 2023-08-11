@@ -1,11 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Play:wght@700&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Tangerine');
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lobster&family=Pacifico&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lobster&family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 
-/* font-family: 'Dancing Script', cursive;
-font-family: 'Lobster', cursive;
-font-family: 'Pacifico', cursive; */
 
 
 *{
@@ -25,12 +19,14 @@ body{
   align-items: center;
   justify-content: center;
   height: 100vh;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
   
 }
 
 .intro-text {
   text-align: center;
-  animation: fadeInUp 1.5s ease-out;
+  animation: fadeInUp 2.5s ease-out;
 }
 
 .intro-text h1 {
