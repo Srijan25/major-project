@@ -7,6 +7,7 @@ import Parent from './pages/parent';
 import Home from './pages/home';
 import Navbar from './pages/navbar';
 import Footer from './pages/footer';
+import Events from './pages/events';
 function App() {
   return (
     <>
@@ -18,6 +19,7 @@ function App() {
       <Route path="/teacher" Component={Teacher} />
       <Route path="/parent" Component={Parent} />
       <Route path="/" Component={Home} />
+      <Route path="/events" Component={Events} />
     </Routes>
     <Footer/>
 
