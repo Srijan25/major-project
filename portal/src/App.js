@@ -11,6 +11,7 @@ import Events from './pages/events';
 import Ann from './pages/ann';
 import Subject from './pages/subject';
 import Notes from './pages/notes';
+import Contact from './pages/contact';
 function App() {
   return (
     <>
@@ -26,6 +27,7 @@ function App() {
       <Route path="/ann" Component={Ann} />
       <Route path="/subject" Component={Subject} />
       <Route path="/notes" Component={Notes} />
+      <Route path="/contact" Component={Contact} />
     </Routes>
     <Footer/>
 
