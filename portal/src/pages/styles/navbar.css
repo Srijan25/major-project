@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lobster&family=Pacifico&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
 
-.container{
+.nav-container{
   padding: 18px;
   
   overflow: hidden;
@@ -11,11 +11,11 @@
   justify-content: center;
   align-items: center;
 }
-.container li{
+.nav-container li{
   list-style: none;
   display: inline;
 }
-.container li a{
+.nav-container li a{
   text-decoration: none;
   padding: 14px 20px;
   font-size: 16px;
@@ -28,20 +28,20 @@
   font-size: 20px;
   text-shadow: 4px 4px 4px #aaa;
 }
-.container li a:hover{
+.nav-container li a:hover{
   color: black;
     background-color: #f2f2f2;
     border-radius: 15px;
 
 }
 
-.container li a.active{
+.nav-container li a.active{
   color: black;
     background-color: #f2f2f2;
     border-radius: 15px;
 }
 
-.container li a.active:hover{
+.nav-container li a.active:hover{
   color: black;
     background-color: #f2f2f2;
     border-radius: 15px;
