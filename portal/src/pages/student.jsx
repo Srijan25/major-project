@@ -7,7 +7,7 @@ const student = () => {
         <h1>Welcome Back, Srijan</h1>
       <div className="student">
         <div className="stu-container">
-          <a className="card1" href="#">
+          <a className="card1" href="subject">
             <h3>My Subjects</h3>
 
             <div className="go-corner" href="#">
@@ -43,7 +43,7 @@ const student = () => {
           </a>
         </div>
         <div className="stu-container">
-          <a className="card1" href="#">
+          <a className="card1" href="ann">
             <h3>Announcements</h3>
             <div className="go-corner" href="#">
               <div className="go-arrow">→</div>

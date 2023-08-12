@@ -9,6 +9,8 @@ import Navbar from './pages/navbar';
 import Footer from './pages/footer';
 import Events from './pages/events';
 import Ann from './pages/ann';
+import Subject from './pages/subject';
+import Notes from './pages/notes';
 function App() {
   return (
     <>
@@ -22,6 +24,8 @@ function App() {
       <Route path="/" Component={Home} />
       <Route path="/events" Component={Events} />
       <Route path="/ann" Component={Ann} />
+      <Route path="/subject" Component={Subject} />
+      <Route path="/notes" Component={Notes} />
     </Routes>
     <Footer/>
 

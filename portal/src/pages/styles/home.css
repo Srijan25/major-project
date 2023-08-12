@@ -18,8 +18,9 @@ body{
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 70vh;
+  height: 80vh;
   color: white;
+  font-weight: 800;
   font-family: 'Montserrat', sans-serif;
   
 }
@@ -30,13 +31,19 @@ body{
 }
 
 .intro-text h1 {
-  font-size: 2.5rem;
+  font-size: 4.5rem;
   margin-bottom: 1rem;
+  color: #e6e6e6;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  text-decoration: underline #e6e6e6;
+  margin: 20px;
 }
 
 .intro-text p {
   font-size: 1.2rem;
   margin-bottom: 1.5rem;
+  font-weight: 800;
+  color: #e6e6e6;
 }
 
 .btn {
