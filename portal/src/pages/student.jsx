@@ -26,7 +26,7 @@ const student = () => {
         </div>
         <div className="stu-container">
           <a className="card1" href="#">
-            <h3>Attendance</h3>
+            <h3>My Attendance</h3>
 
             <div className="go-corner" href="#">
               <div className="go-arrow">→</div>

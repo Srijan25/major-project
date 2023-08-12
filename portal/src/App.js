@@ -8,6 +8,7 @@ import Home from './pages/home';
 import Navbar from './pages/navbar';
 import Footer from './pages/footer';
 import Events from './pages/events';
+import Ann from './pages/ann';
 function App() {
   return (
     <>
@@ -20,6 +21,7 @@ function App() {
       <Route path="/parent" Component={Parent} />
       <Route path="/" Component={Home} />
       <Route path="/events" Component={Events} />
+      <Route path="/ann" Component={Ann} />
     </Routes>
     <Footer/>
 

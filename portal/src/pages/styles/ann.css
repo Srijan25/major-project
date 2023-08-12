@@ -1,0 +1,19 @@
+.ann{
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #ccc;
+}
+
+.ann h1{
+    font-size: 40px;
+    font-weight: 700;
+    color: #00838d;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    
+    }
