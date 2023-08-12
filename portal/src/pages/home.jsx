@@ -10,7 +10,7 @@ const home = () => {
         <div className="intro-text">
             <h1>Supervision Portal</h1>
             <p>Supervision Portal is a web application that allows students to check their attendance, grades, and news.</p>
-            <a href="signup" className="btn">Sign Up</a>
+            <a href="login" className="btn">Getting Start</a>
         </div>
 
     </div>

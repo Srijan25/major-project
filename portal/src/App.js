@@ -12,6 +12,8 @@ import Ann from './pages/ann';
 import Subject from './pages/subject';
 import Notes from './pages/notes';
 import Contact from './pages/contact';
+import About from './pages/about';
+import Pdf from './pages/pdf';
 function App() {
   return (
     <>
@@ -28,6 +30,8 @@ function App() {
       <Route path="/subject" Component={Subject} />
       <Route path="/notes" Component={Notes} />
       <Route path="/contact" Component={Contact} />
+      <Route path="/about" Component={About} />
+      <Route path="/pdf" Component={Pdf} />
     </Routes>
     <Footer/>
 
