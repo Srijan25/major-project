@@ -3,11 +3,34 @@ import "./styles/login.css";
 import loginimg from "../assests/login.gif";
 import axios from "axios";
 import swal from "sweetalert";
+import Modal from "./Modal";
+import { FormGroup, Form, Input, Label, Row, Col } from 'reactstrap';
+
 
 
 
 
 const Signup = () => {
+  const [isSOpen, setIsSOpen] = useState(false);
+
+    const openSModal = () => {
+        setIsSOpen(true);
+    };
+
+    const closeSModal = () => {
+        setIsSOpen(false);
+    };
+  const [isTOpen, setIsTOpen] = useState(false);
+
+    const openTModal = () => {
+        setIsTOpen(true);
+    };
+
+    const closeTModal = () => {
+        setIsSOpen(false);
+    };
+
+    
 
     const handleChange = (e, field) => {    
         setData({ ...data, [field]: e.target.value });
@@ -18,6 +41,7 @@ const Signup = () => {
         emailId: "",
         mobileNumber:"",
         password: "",
+        role:"",
     });
 
     useEffect(() => {
@@ -29,8 +53,17 @@ const Signup = () => {
        axios.post("http://localhost:8080/api/users/signup", data)
         .then((res) => {
             console.log(res);
-            swal("Success", "User Registered Successfully", "success");
-            window.location.href = "/login";
+            if(data.role==="student"){
+              openSModal();
+            }
+            else if(data.role==="teacher"){
+              openTModal();
+            }
+            else{
+              swal("Error", "User Already Exists", "error");
+            }
+           
+           
         }
         )
         .catch((err) => {
@@ -103,17 +136,15 @@ const Signup = () => {
 
               <label>Password</label>
             </div>
-            <div className="content">
-              <div className="checkbox">
-                <input type="checkbox" id="remember-me" />
-                <label htmlFor="remember-me">Remember me</label>
-              </div>
-              {/* <div className="pass-link">
-          <a href="#">Forgot password?</a>
-        </div> */}
+            <div className="role">
+              <input type="radio" id="student" name="role" value="student" onChange={(e) => handleChange(e, "role")} />
+              <label for="student">Student</label>
+              <br />
+              <input type="radio" id="teacher" name="role" value="teacher" onChange={(e) => handleChange(e, "role")} />
+              <label for="teacher">Teacher</label>
             </div>
             <div className="field">
-              <input type="submit" value="Register" />
+              <input type="submit"  value="Register" />
             </div>
 
             <div className="google-btn" id="singInDiv"></div>
@@ -122,6 +153,78 @@ const Signup = () => {
               Already a member? <a href="login">Login</a>
             </div>
           </form>
+          <Modal isOpen={isSOpen} onClose={closeSModal}>
+                            <div className="modal-div" >
+                                <div className="popup-content">
+                                    
+                                    <section>
+  <div className="form-box">
+    <div className="form-value">
+      <form action="">
+        <h2>Student Login</h2>
+        <div className="inputbox">
+          <ion-icon name="mail-outline" />
+          <input type="text" required="" />
+          <label htmlFor="">Username</label>
+        </div>
+        <div className="inputbox">
+          <ion-icon name="lock-closed-outline" />
+          <input type="password" required="" />
+          <label htmlFor="">Password</label>
+        </div>
+        <div className="forget">
+          <label>
+            <input type="checkbox" />
+            Remember Me
+          </label>
+          <a href="#">Forgot password?</a>
+        </div>
+        <button onClick={closeSModal}>Log in</button>
+        
+      </form>
+    </div>
+  </div>
+</section>
+
+                                </div>
+                            </div>
+                        </Modal>
+          <Modal isOpen={isTOpen} onClose={closeTModal}>
+                            <div className="modal-div" >
+                                <div className="popup-content">
+                                    
+                                    <section>
+  <div className="form-box">
+    <div className="form-value">
+      <form action="">
+        <h2>Teacher Login</h2>
+        <div className="inputbox">
+          <ion-icon name="mail-outline" />
+          <input type="text" required="" />
+          <label htmlFor="">Username</label>
+        </div>
+        <div className="inputbox">
+          <ion-icon name="lock-closed-outline" />
+          <input type="password" required="" />
+          <label htmlFor="">Password</label>
+        </div>
+        <div className="forget">
+          <label>
+            <input type="checkbox" />
+            Remember Me
+          </label>
+          <a href="#">Forgot password?</a>
+        </div>
+        <button onClick={closeTModal}>Log in</button>
+        
+      </form>
+    </div>
+  </div>
+</section>
+
+                                </div>
+                            </div>
+                        </Modal>
         </div>
       </div>
     </>

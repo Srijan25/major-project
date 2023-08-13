@@ -14,6 +14,7 @@ import Notes from './pages/notes';
 import Contact from './pages/contact';
 import About from './pages/about';
 import Pdf from './pages/pdf';
+import Hod from './pages/hod';
 function App() {
   return (
     <>
@@ -32,6 +33,7 @@ function App() {
       <Route path="/contact" Component={Contact} />
       <Route path="/about" Component={About} />
       <Route path="/pdf" Component={Pdf} />
+      <Route path="/hod" Component={Hod} />
     </Routes>
     <Footer/>
 

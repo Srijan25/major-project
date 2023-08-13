@@ -4,7 +4,7 @@ import './styles/contact.css';
 const Contact = () => {
     return (
         <>
-  <section className="contact_us">
+  <div className="contact_us">
     <div className="container">
       <div className="row">
         <div className="col-md-10 offset-md-1">
@@ -81,8 +81,8 @@ const Contact = () => {
         </div>
       </div>
     </div>
-  </section>
-  <section className="map_sec">
+  </div>
+  <div className="map_sec">
     <div className="container">
       <div className="row">
         <div className="col-md-10 offset-md-1">
@@ -109,7 +109,7 @@ const Contact = () => {
         </div>
       </div>
     </div>
-  </section>
+  </div>
 </>
 
     )
