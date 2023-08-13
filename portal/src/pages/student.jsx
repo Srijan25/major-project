@@ -15,7 +15,7 @@ const student = () => {
             </div>
           </a>
         </div>
-        <div className="stu-container">
+        {/* <div className="stu-container">
           <a className="card1" href="#">
             <h3>My Grades</h3>
 
@@ -41,7 +41,7 @@ const student = () => {
               <div className="go-arrow">→</div>
             </div>
           </a>
-        </div>
+        </div> */}
         <div className="stu-container">
           <a className="card1" href="ann">
             <h3>Announcements</h3>
@@ -51,7 +51,7 @@ const student = () => {
           </a>
         </div>
         <div className="stu-container">
-          <a className="card1" href="#">
+          <a className="card1" href="feedback">
             <h3>Feedback</h3>
             <div className="go-corner" href="#">
               <div className="go-arrow">→</div>

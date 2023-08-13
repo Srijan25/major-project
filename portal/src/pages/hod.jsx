@@ -51,6 +51,14 @@ const Hod = () => {
             </div>
           </a>
         </div>
+        <div className="stu-container">
+          <a className="card1" href="#">
+            <h3>Feedback</h3>
+            <div className="go-corner" href="#">
+              <div className="go-arrow">→</div>
+            </div>
+          </a>
+        </div>
 
         
       </div>
