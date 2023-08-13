@@ -12,6 +12,35 @@ import { FormGroup, Form, Input, Label, Row, Col } from 'reactstrap';
 
 const Signup = () => {
   const [isSOpen, setIsSOpen] = useState(false);
+  const [semester, setSemester] = useState(false);
+
+  const semOpen = () => {
+    setSemester(true);  
+  }
+
+  const semClose = () => {
+    setSemester(false);
+  }
+  let menu = null;
+  if(semester){
+    menu = (
+      <>
+      <select id="semesterSelect" name="semester" onChange={(e) => handleChange(e, "semester")}>
+            <option value="1">1st Semester</option>
+            <option value="2">2nd Semester</option>
+            <option value="3">3rd Semester</option>
+            <option value="4">4th Semester</option>
+            <option value="5">5th Semester</option>
+            <option value="6">6th Semester</option>
+            <option value="7">7th Semester</option>
+            <option value="8">8th Semester</option>
+        </select></>
+    )
+  }
+    
+
+
+
 
     const openSModal = () => {
         setIsSOpen(true);
@@ -30,6 +59,13 @@ const Signup = () => {
         setIsSOpen(false);
     };
 
+    const [photo, setPhoto] = useState(null);
+
+    const handlePhoto = (e) => {
+        setPhoto(e.target.files[0]);
+    };
+
+
     
 
     const handleChange = (e, field) => {    
@@ -42,6 +78,10 @@ const Signup = () => {
         mobileNumber:"",
         password: "",
         role:"",
+        semester:"",
+        studentRoll:"",
+        
+
     });
 
     useEffect(() => {
@@ -53,15 +93,21 @@ const Signup = () => {
        axios.post("http://localhost:8080/api/users/signup", data)
         .then((res) => {
             console.log(res);
-            if(data.role==="student"){
-              openSModal();
-            }
-            else if(data.role==="teacher"){
-              openTModal();
-            }
-            else{
-              swal("Error", "User Already Exists", "error");
-            }
+            const formData = new FormData();
+            formData.append("image", photo);
+            const userId = res.data.userId;
+            axios.post("http://localhost:8080/api/users/user/img_upload/"+userId, formData)
+            swal("Success", "User Created Successfully", "success");
+
+            // if(data.role==="student"){
+            //   openSModal();
+            // }
+            // else if(data.role==="teacher"){
+            //   openTModal();
+            // }
+            // else{
+            //   swal("Error", "User Already Exists", "error");
+            // }
            
            
         }
@@ -102,6 +148,19 @@ const Signup = () => {
             </div>
             <div className="field">
               <input
+                type="text"
+
+                id="studentRoll"
+                onChange={(e) => handleChange(e, "studentRoll")}
+                value={data.studentRoll} required
+                
+              />
+              
+              <label> Unique Id</label>
+            </div>
+
+            <div className="field">
+              <input
                 type="emailId"
 
                 id="emailId"
@@ -137,12 +196,15 @@ const Signup = () => {
               <label>Password</label>
             </div>
             <div className="role">
-              <input type="radio" id="student" name="role" value="student" onChange={(e) => handleChange(e, "role")} />
+              <input type="radio" id="student" onClick={semOpen} name="role" value="student" onChange={(e) => handleChange(e, "role")} />
               <label for="student">Student</label>
+              {menu}
               <br />
-              <input type="radio" id="teacher" name="role" value="teacher" onChange={(e) => handleChange(e, "role")} />
+              <input type="radio" id="teacher" name="role" onClick={semClose} value="teacher" onChange={(e) => handleChange(e, "role")} />
               <label for="teacher">Teacher</label>
             </div>
+            <label for="file" className="filelabel"> <ion-icon name="cloud-upload-outline" /> Upload Photo</label>
+            <input type="file" name="file" id="file" className="inputfile" accept="image/*" onChange={handlePhoto} />
             <div className="field">
               <input type="submit"  value="Register" />
             </div>

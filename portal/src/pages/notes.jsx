@@ -1,14 +1,38 @@
-import React from "react";
+import React,{useState,useEffect} from "react";
 import "./styles/notes.css";
+import axios from "axios";
+import { useParams } from "react-router-dom";
 
 const Notes = () => {
+  const { id } = useParams();
+  const subjectId = id;
+  const [notes, setNotes] = useState([]);
+
+  const fetchdata = () => {
+    axios.get("http://localhost:8080/api/unit/unitsBySubject/"+ subjectId).then((res) => {
+      console.log(res.data);
+      setNotes(res.data);
+    });
+
+  };
+
+  useEffect(() => {
+    fetchdata();
+  }, []);
+
+
   return (
     <div className="notes">
+      {
+        notes.map((item) => {
+          return (
+            <>
     <div className="notes-container">
-      <a className="card4" href="pdf">
-        <h3>Unit 1</h3>
+      <a className="card4" href="/pdf">
+        <h3>Unit {item.unitNumber}</h3>
+        <h3>Unit {item.unitName}</h3>
         <p className="small">
-        Overview, Motivation(for Data Mining),Data Mining-Definition & Functionalities  Data Processing, Form of Data Pre-processing Data Cleaning: Missing Values, Noisy Data, (Binning, Clustering, Regression, Computer and Human inspection)  Inconsistent Data, Data Integration and Transformation. Data Reduction:-Data Cube Aggregation, Dimensionality reduction  Data Compression, Luminosity Reduction, Clustering, Discrimination and Concept hierarchy generation
+          {item.unitDesc}
         </p>
         <div className="dimmer" />
         <div className="go-corner" href="#">
@@ -16,54 +40,11 @@ const Notes = () => {
         </div>
       </a>
     </div>
-    <div className="notes-container">
-      <a className="card4" href="pdf">
-        <h3>Unit 1</h3>
-        <p className="small">
-        Overview, Motivation(for Data Mining),Data Mining-Definition & Functionalities  Data Processing, Form of Data Pre-processing Data Cleaning: Missing Values, Noisy Data, (Binning, Clustering, Regression, Computer and Human inspection)  Inconsistent Data, Data Integration and Transformation. Data Reduction:-Data Cube Aggregation, Dimensionality reduction  Data Compression, Luminosity Reduction, Clustering, Discrimination and Concept hierarchy generation
-        </p>
-        <div className="dimmer" />
-        <div className="go-corner" href="#">
-          <div className="go-arrow">→</div>
-        </div>
-      </a>
-    </div>
-    <div className="notes-container">
-      <a className="card4" href="#">
-        <h3>Unit 1</h3>
-        <p className="small">
-        Overview, Motivation(for Data Mining),Data Mining-Definition & Functionalities  Data Processing, Form of Data Pre-processing Data Cleaning: Missing Values, Noisy Data, (Binning, Clustering, Regression, Computer and Human inspection)  Inconsistent Data, Data Integration and Transformation. Data Reduction:-Data Cube Aggregation, Dimensionality reduction  Data Compression, Luminosity Reduction, Clustering, Discrimination and Concept hierarchy generation
-        </p>
-        <div className="dimmer" />
-        <div className="go-corner" href="#">
-          <div className="go-arrow">→</div>
-        </div>
-      </a>
-    </div>
-    <div className="notes-container">
-      <a className="card4" href="#">
-        <h3>Unit 1</h3>
-        <p className="small">
-        Overview, Motivation(for Data Mining),Data Mining-Definition & Functionalities  Data Processing, Form of Data Pre-processing Data Cleaning: Missing Values, Noisy Data, (Binning, Clustering, Regression, Computer and Human inspection)  Inconsistent Data, Data Integration and Transformation. Data Reduction:-Data Cube Aggregation, Dimensionality reduction  Data Compression, Luminosity Reduction, Clustering, Discrimination and Concept hierarchy generation
-        </p>
-        <div className="dimmer" />
-        <div className="go-corner" href="#">
-          <div className="go-arrow">→</div>
-        </div>
-      </a>
-    </div>
-    <div className="notes-container">
-      <a className="card4" href="#">
-        <h3>Unit 1</h3>
-        <p className="small">
-        Overview, Motivation(for Data Mining),Data Mining-Definition & Functionalities  Data Processing, Form of Data Pre-processing Data Cleaning: Missing Values, Noisy Data, (Binning, Clustering, Regression, Computer and Human inspection)  Inconsistent Data, Data Integration and Transformation. Data Reduction:-Data Cube Aggregation, Dimensionality reduction  Data Compression, Luminosity Reduction, Clustering, Discrimination and Concept hierarchy generation
-        </p>
-        <div className="dimmer" />
-        <div className="go-corner" href="#">
-          <div className="go-arrow">→</div>
-        </div>
-      </a>
-    </div>
+    </>
+
+          )
+        })
+      }
     </div>
   );
 };

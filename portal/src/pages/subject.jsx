@@ -4,26 +4,27 @@ import axios from "axios";
 
 const Subject = () => {
   const [subject, setSubject] = useState([]);
-
-  const subjectName = []
-  for (let i = 0; i < subject.length; i++) {
-    subjectName.push(subject[i].subjectName);
-  }
-
+  
   
 
   const fetchdata = () => {
-    axios.get("http://localhost:8080/api/subject/view").then((res) => {
-      
+    axios.get("http://localhost:8080/api/subject/view/1/1").then((res) => {
+      console.log(res.data);
       setSubject(res.data);
-      
      
     });
   };
 
+  
+
   useEffect(() => {
+
     fetchdata();
   }, []);
+
+  const units = (id) => {
+    window.location.href = "/notes/"+id;
+  }
 
   
 
@@ -33,39 +34,43 @@ const Subject = () => {
         <i className="mode-switch fas fa-moon" />
         <h1>Your Subjects</h1>
       </div>
-      
+      {
+        subject.map((item) => {
+          return (
+            <>
       <div className="courses">
         <div className="course html" tabIndex={1}>
           <div className="course-info">
-            <span>Subject</span>
-            <h5>Basic HTML</h5>
+            <span>{item.subjectCode}</span>
+            <h5>{item.subjectName}</h5>
             <a href="#" tabIndex={2}>
               Chapters <i className="fas fa-chevron-right" />
             </a>
           </div>
           <div className="course-more">
+            {
+              item.units.map((unit) => {
+                return (
+                  <>
             <div className="details">
-              <h5>Introduction to web Application</h5>
+              <h5>{unit.unitName}</h5>
             </div>
-            <div className="details">
-              <h5>Introduction to web Application</h5>
-            </div>
-            <div className="details">
-              <h5>Introduction to web Application</h5>
-            </div>
-            <div className="details">
-              <h5>Introduction to web Application</h5>
-            </div>
-            <div className="details">
-              <h5>Introduction to web Application</h5>
-            </div>
-            <a className="continue-btn html" tabIndex={4} href="notes">
+            </>
+                )
+              })
+            }
+            
+            <a className="continue-btn html" tabIndex={4} href="#" onClick={() => units(item.subjectId)}>
               Continue
             </a>
           </div>
         </div>
-        
       </div>
+      </>
+
+          )
+        })
+      }
     </div>
   );
 };
