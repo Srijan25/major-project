@@ -58,6 +58,11 @@ const Pdf = () => {
   }, []);
 
 
+const viewPdf = (id) => {
+  window.location.href = "http://localhost:8080/api/unit/notes/"+id;
+}
+
+
   
   
   
@@ -169,7 +174,7 @@ const Pdf = () => {
                   </div>
                   <div className="solu_description">
                     <p>{unitDesc}</p>
-                    <button type="button" className="read_more_btn">
+                    <button type="button" onClick={() => viewPdf(item)} className="read_more_btn">
                      View
                     </button>
                   </div>
