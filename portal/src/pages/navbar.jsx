@@ -13,7 +13,7 @@ const navbar = () => {
 	if(window.localStorage.getItem('token')){
 		menu = (
 			<>
-			<li><a href="/profile">{name}</a></li>
+			<li><a href="/student">{name}</a></li>
 			<li><a href="/" onClick={logout}>Logout</a></li>
 			</>
 		)

@@ -59,7 +59,8 @@ const Pdf = () => {
 
 
 const viewPdf = (id) => {
-  window.location.href = "http://localhost:8080/api/unit/notes/"+id;
+  const url= "http://localhost:8080/api/unit/notes/"+id;
+  window.open(url, "_blank");
 }
 
 
