@@ -45,8 +45,8 @@ const Pdf = () => {
 
   const fetchdata = () => {
     axios.get("http://localhost:8080/api/unit/"+ unitId).then((res) => {
-      console.log(res.data);
-      setPdf(res.data);
+      console.log(res.data.notes);
+      setPdf(res.data.notes);
       setUnitName(res.data.unitName);
       setUnitDesc(res.data.unitDesc);
     });
@@ -76,7 +76,7 @@ const Pdf = () => {
               <div className="solution_cards_box">
 
                 {
-                  pdf.notes.map((item) => {
+                  pdf.map((item) => {
                     return (
                       <>
 
@@ -177,9 +177,8 @@ const Pdf = () => {
                 </>
               );
             })}
+                
               </div>
-
-
             </div>
           </div>
         </div>
