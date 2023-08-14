@@ -20,6 +20,11 @@ const Notes = () => {
     fetchdata();
   }, []);
 
+  const pdfByUnit = (id) => {
+    window.location.href = "/pdf/"+id;
+  }
+
+
 
   return (
     <div className="notes">
@@ -28,7 +33,7 @@ const Notes = () => {
           return (
             <>
     <div className="notes-container">
-      <a className="card4" href="/pdf">
+      <a className="card4" href="#"  onClick={() =>pdfByUnit(item.unitId)} >
         <h3>Unit {item.unitNumber}</h3>
         <h3>Unit {item.unitName}</h3>
         <p className="small">

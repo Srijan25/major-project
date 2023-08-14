@@ -5,10 +5,11 @@ import axios from "axios";
 const Subject = () => {
   const [subject, setSubject] = useState([]);
   
-  
+  const dept = window.localStorage.getItem("dept");
+  const sem = window.localStorage.getItem("semester");
 
   const fetchdata = () => {
-    axios.get("http://localhost:8080/api/subject/view/1/1").then((res) => {
+    axios.get("http://localhost:8080/api/subject/view/"+sem+"/"+dept).then((res) => {
       console.log(res.data);
       setSubject(res.data);
      

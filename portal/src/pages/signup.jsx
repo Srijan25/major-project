@@ -80,6 +80,10 @@ const Signup = () => {
         role:"",
         semester:"",
         studentRoll:"",
+        dept:{
+          deptId:1
+        }
+        
         
 
     });

@@ -29,6 +29,8 @@ const Login = () => {
         localStorage.setItem("name", res.data.name); 
         localStorage.setItem("userId", res.data.userId);
         localStorage.setItem("role", res.data.role);
+        localStorage.setItem("semester", res.data.semester);
+        localStorage.setItem("dept", res.data.dept.deptId);
         
 
         if (res.data.role === "student") {

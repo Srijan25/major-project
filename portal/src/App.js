@@ -33,7 +33,7 @@ function App() {
       <Route path="/notes/:id" Component={Notes} />
       <Route path="/contact" Component={Contact} />
       <Route path="/about" Component={About} />
-      <Route path="/pdf" Component={Pdf} />
+      <Route path="/pdf/:id" Component={Pdf} />
       <Route path="/hod" Component={Hod} />
       <Route path="/feedback" Component={Feedback} />
     </Routes>
