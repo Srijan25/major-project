@@ -1,7 +1,51 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import useRazorpay from "react-razorpay";
 import "./styles/student.css";
+import swal from 'sweetalert';
 const student = () => {
+  const PayByRazorPay = () => {
+    const options = {
+      key: "rzp_test_QvfhRP9slPcend",
+      amount: 50000 * 100,
+      currency: "INR",
+      name: "University",
+      description: "Pay to University",
+
+      handler: function (response) {
+        console.log(response);
+        console.log(response.razorpay_payment_id);
+        console.log(response.razorpay_order_id);
+        console.log(response.razorpay_signature);
+        swal.fire({
+          title: "Payment Successfull",
+          text: "Payment Id: " + response.razorpay_payment_id,
+          icon: "success",
+          confirmButtonText: "Ok",
+        });
+
+      },
+      prefill: {
+        name: "Srijan",
+        email: "srijanksah02@gmail.com",
+        contact: "7489581850",
+      },
+      notes: {
+        address: "ShopEase Corporate Office",
+      },
+      theme: {
+        color: "#61dafb",
+      },
+    };
+    const rzp1 = new window.Razorpay(options);
+    rzp1.open();
+  };
+
+  const pay = () => {
+    PayByRazorPay();
+  };
+
+
   return (
     <div className="stu">
         <h1>Welcome Back, Srijan</h1>
@@ -58,7 +102,7 @@ const student = () => {
             </div>
           </a>
         </div>
-        <div className="stu-container">
+        <div onClick={pay} className="stu-container">
           <a className="card1" href="#">
             <h3>Fees</h3>
             <div className="go-corner" href="#">

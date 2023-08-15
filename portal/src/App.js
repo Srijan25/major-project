@@ -16,6 +16,9 @@ import About from './pages/about';
 import Pdf from './pages/pdf';
 import Hod from './pages/hod';
 import Feedback from './pages/feedback';
+import StudentList from './pages/StudentList';
+import TeacherList from './pages/TeacherList';
+import FeedbackData from './pages/feedbackdata';
 function App() {
   return (
     <>
@@ -36,6 +39,9 @@ function App() {
       <Route path="/pdf/:id" Component={Pdf} />
       <Route path="/hod" Component={Hod} />
       <Route path="/feedback" Component={Feedback} />
+      <Route path="/studentlist" Component={StudentList} />
+      <Route path="/teacherlist" Component={TeacherList} />
+      <Route path="/feedbackdata" Component={FeedbackData} />
     </Routes>
     <Footer/>
 
