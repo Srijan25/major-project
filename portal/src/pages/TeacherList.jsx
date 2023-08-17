@@ -11,11 +11,11 @@ const TeacherList = () => {
             <table cellPadding={0} cellSpacing={0} border={0}>
               <thead>
                 <tr>
-                  <th>Code</th>
-                  <th>Company</th>
-                  <th>Price</th>
-                  <th>Change</th>
-                  <th>Change %</th>
+                  <th>S.No.</th>
+                  <th>Image</th>
+                  <th>Name</th>
+                  <th>Email Id</th>
+                  <th>Phone No.</th>
                 </tr>
               </thead>
             </table>
