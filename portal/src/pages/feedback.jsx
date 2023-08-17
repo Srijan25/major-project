@@ -1,7 +1,7 @@
 import React from "react";
 import "./styles/feedback.css";
 
-const Feedback = () => {
+const AddFeedback = () => {
   return (
     <>
       <header>
@@ -292,4 +292,4 @@ const Feedback = () => {
   );
 };
 
-export default Feedback;
+export default AddFeedback;
