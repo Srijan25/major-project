@@ -19,7 +19,8 @@ import Feedback from './pages/feedback';
 import StudentList from './pages/StudentList';
 import TeacherList from './pages/TeacherList';
 import FeedbackData from './pages/feedbackdata';
-import 
+import AddAnn from './pages/addann';
+import AddEvent from './pages/addevent';
 function App() {
   return (
     <>
@@ -43,6 +44,8 @@ function App() {
       <Route path="/studentlist" Component={StudentList} />
       <Route path="/teacherlist" Component={TeacherList} />
       <Route path="/feedbackdata" Component={FeedbackData} />
+      <Route path="/addann" Component={AddAnn} />
+      <Route path="/addevent" Component={AddEvent} />
     </Routes>
     <Footer/>
 

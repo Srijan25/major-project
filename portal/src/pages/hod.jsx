@@ -1,10 +1,14 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
 import './styles/student.css'
 
 const Hod = () => {
+    const [name,setName]=useState("");
+    useEffect(()=>{
+        setName(localStorage.getItem("name"));
+    },[])
     return (
         <div className="stu">
-        <h1>Welcome Back, Srijan</h1>
+        <h1>Welcome Back, {name}</h1>
       <div className="student">
         <div className="stu-container">
           <a className="card1" href="/teacherlist">
@@ -34,19 +38,19 @@ const Hod = () => {
           </a>
         </div>
         <div className="stu-container">
-          <a className="card1" href="signup">
+          <a className="card1" href="/addevent">
             <h3>Add Event</h3>
 
-            <div className="go-corner" href="#">
+            <div className="go-corner" href="/addevent">
               <div className="go-arrow">→</div>
             </div>
           </a>
         </div>
         <div className="stu-container">
-          <a className="card1" href="signup">
+          <a className="card1" href="addann">
             <h3>Add Announcment</h3>
 
-            <div className="go-corner" href="#">
+            <div className="go-corner" href="/addann">
               <div className="go-arrow">→</div>
             </div>
           </a>

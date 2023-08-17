@@ -103,9 +103,9 @@ const Login = () => {
             <div className="field">
               <input type="submit" value="Login" />
             </div>
-            {/* <div className="signup-link">
+            <div className="signup-link">
               Not a member? <a href="signup">Signup now</a>
-            </div> */}
+            </div>
           </form>
         </div>
       </div>
