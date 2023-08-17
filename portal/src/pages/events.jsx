@@ -1,143 +1,60 @@
-import React from 'react'
-import './styles/events.css';
+import React, { useState, useEffect } from "react";
+import "./styles/events.css";
+import axios from "axios";
 
 const Events = () => {
-    return (
-        <div className="content-wrapper">
-  <div className="news-card">
-    <a href="#" className="news-card__card-link" />
-    <img
-      src="https://images.pexels.com/photos/127513/pexels-photo-127513.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
-      alt=""
-      className="news-card__image"
-    />
-    <div className="news-card__text-wrapper">
-      <h2 className="news-card__title">Amazing First Title</h2>
-      <div className="news-card__post-date">Jan 29, 2018</div>
-      <div className="news-card__details-wrapper">
-        <p className="news-card__excerpt">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Est pariatur
-          nemo tempore repellat? Ullam sed officia iure architecto deserunt
-          distinctio, pariatur…
-        </p>
-        <a href="#" className="news-card__read-more">
-          Read more <i className="fas fa-long-arrow-alt-right" />
-        </a>
-      </div>
-    </div>
-  </div>
-  <div className="news-card">
-    <a href="#" className="news-card__card-link" />
-    <img
-      src="https://images.pexels.com/photos/631954/pexels-photo-631954.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
-      alt=""
-      className="news-card__image"
-    />
-    <div className="news-card__text-wrapper">
-      <h2 className="news-card__title">
-        Amazing Second Title that is Quite Long
-      </h2>
-      <div className="news-card__post-date">Jan 29, 2018</div>
-      <div className="news-card__details-wrapper">
-        <p className="news-card__excerpt">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam
-          obcaecati ex natus nulla rem sequi laborum quod fugit…
-        </p>
-        <a href="#" className="news-card__read-more">
-          Read more <i className="fas fa-long-arrow-alt-right" />
-        </a>
-      </div>
-    </div>
-  </div>
-  <div className="news-card">
-    <a href="#" className="news-card__card-link" />
-    <img
-      src="https://images.pexels.com/photos/247599/pexels-photo-247599.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-      alt=""
-      className="news-card__image"
-    />
-    <div className="news-card__text-wrapper">
-      <h2 className="news-card__title">Amazing Title</h2>
-      <div className="news-card__post-date">Jan 29, 2018</div>
-      <div className="news-card__details-wrapper">
-        <p className="news-card__excerpt">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis
-          beatae…
-        </p>
-        <a href="#" className="news-card__read-more">
-          Read more <i className="fas fa-long-arrow-alt-right" />
-        </a>
-      </div>
-    </div>
-  </div>
-  <div className="news-card">
-    <a href="#" className="news-card__card-link" />
-    <img
-      src="https://images.pexels.com/photos/248486/pexels-photo-248486.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
-      alt=""
-      className="news-card__image"
-    />
-    <div className="news-card__text-wrapper">
-      <h2 className="news-card__title">
-        Amazing Forth Title that is Quite Long
-      </h2>
-      <div className="news-card__post-date">Jan 29, 2018</div>
-      <div className="news-card__details-wrapper">
-        <p className="news-card__excerpt">Lorem ipsum dolor sit amet!</p>
-        <a href="#" className="news-card__read-more">
-          Read more <i className="fas fa-long-arrow-alt-right" />
-        </a>
-      </div>
-    </div>
-  </div>
-  <div className="news-card">
-    <a href="#" className="news-card__card-link" />
-    <img
-      src="https://images.pexels.com/photos/206660/pexels-photo-206660.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
-      alt=""
-      className="news-card__image"
-    />
-    <div className="news-card__text-wrapper">
-      <h2 className="news-card__title">Amazing Fifth Title</h2>
-      <div className="news-card__post-date">Jan 29, 2018</div>
-      <div className="news-card__details-wrapper">
-        <p className="news-card__excerpt">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Est pariatur
-          nemo tempore repellat? Ullam sed officia iure architecto deserunt
-          distinctio…
-        </p>
-        <a href="#" className="news-card__read-more">
-          Read more <i className="fas fa-long-arrow-alt-right" />
-        </a>
-      </div>
-    </div>
-  </div>
-  <div className="news-card">
-    <a href="#" className="news-card__card-link" />
-    <img
-      src="https://images.pexels.com/photos/210243/pexels-photo-210243.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
-      alt=""
-      className="news-card__image"
-    />
-    <div className="news-card__text-wrapper">
-      <h2 className="news-card__title">
-        Amazing 6<sup>th</sup> Title
-      </h2>
-      <div className="news-card__post-date">Jan 29, 2018</div>
-      <div className="news-card__details-wrapper">
-        <p className="news-card__excerpt">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Est pariatur
-          nemo tempore repellat? Ullam sed officia.
-        </p>
-        <a href="#" className="news-card__read-more">
-          Read more <i className="fas fa-long-arrow-alt-right" />
-        </a>
-      </div>
-    </div>
-  </div>
-</div>
-
-    )
+  const [events, setEvents] = useState([]);
+  const fetchpic = (pic) => {
+    if(pic){
+        return "http://localhost:8080/api/events/event/image/"+pic
+    }
+    else{
+        return "https://www.pngitem.com/pimgs/m/146-1468479_my-profile-icon-blank-profile-picture-circle-hd.png"
+    }
 }
 
-export default Events
+  const fetchdata = async () => {
+    const response = await axios.get("http://localhost:8080/api/events/events");
+    setEvents(response.data);
+    console.log(response.data);
+  };
+
+  useEffect(() => {
+    fetchdata();
+  }, []);
+
+  return (
+    <>
+      <div className="content-wrapper">
+      {
+                  events.map((item) => {
+                    return (
+                      <>
+        <div className="news-card">
+          <a href="#" className="news-card__card-link" />
+          <img
+            src={fetchpic(item.eventImage)}
+            alt=""
+            className="news-card__image"
+          />
+          <div className="news-card__text-wrapper">
+            <h2 className="news-card__title">{item.eventsTitle}</h2>
+            <div className="news-card__post-date">{item.eventsDate}</div>
+            <div className="news-card__details-wrapper">
+              <p className="news-card__excerpt">
+               {item.eventsDescription}
+              </p>
+              
+            </div>
+          </div>
+        </div>
+        </>
+        );
+      })
+    }
+      </div>
+    </>
+  );
+};
+
+export default Events;
