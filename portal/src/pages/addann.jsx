@@ -1,9 +1,38 @@
 import React, { useState, useEffect } from "react";
 import "./styles/feedback.css";
 import axios from "axios";
+import swal from 'sweetalert';
 
 
 const AddAnn = () => {
+    const handleChange = (e, field) => {
+        setData({ ...data, [field]: e.target.value });
+    };
+
+    const [data, setData] = useState({
+        title: "",
+        description: "",
+        date: "",
+    });
+
+    const submitForm = (e) => {
+        e.preventDefault();
+        axios.post("http://localhost:8080/api/announcements/create", data).then((res) => {
+            console.log(res.data);
+            swal("Success", "Announcement Created Successfully", "success");
+        })
+            .catch((err) => {
+                console.log(err);
+                swal("Error", "Announcement Already Exists", "error");
+            });
+
+    };
+
+    useEffect(() => {
+        console.log(data);
+    }, [data]);
+
+
     return (
         <>
       <header>
@@ -12,7 +41,7 @@ const AddAnn = () => {
         </h1>
         
       </header>
-      <form id="survey=-form">
+      <form id="survey=-form" onSubmit={submitForm}>
         <fieldset>
           <label id="name_and_surname-label" htmlFor="name_and_surname">
             Title
@@ -23,6 +52,8 @@ const AddAnn = () => {
             placeholder="Your answer"
             required=""
             className="form-control"
+            onChange={(e) => handleChange(e, "title")}
+            value={data.title}
           />
         </fieldset>
         
@@ -35,6 +66,8 @@ const AddAnn = () => {
             placeholder="Your answer"
             className="input-textarea"
             defaultValue={""}
+            onChange={(e) => handleChange(e, "description")}
+            value={data.description}
           />
         </fieldset>
 
@@ -48,6 +81,8 @@ const AddAnn = () => {
                 placeholder="Your answer"
                 required=""
                 className="form-control"
+                onChange={(e) => handleChange(e, "date")}
+                value={data.date}
             />
         </fieldset>
         
