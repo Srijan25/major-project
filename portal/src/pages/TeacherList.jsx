@@ -4,7 +4,6 @@ import axios from 'axios'
 
 const TeacherList = () => {
     const [teacherList, setTeacherList] = useState([])
-    const [pic, setPic] = useState('https://www.pngitem.com/pimgs/m/146-1468479_my-profile-icon-blank-profile-picture-circle-hd.png')
     const fetchpic = (pic) => {
         if(pic){
             return "http://localhost:8080/api/unit/notes/"+pic
@@ -15,7 +14,7 @@ const TeacherList = () => {
     }
     
     const fetchdata = async () => {
-        const response = await axios.get('http://localhost:8080/api/users/allUsers')
+        const response = await axios.get('http://localhost:8080/api/users/usersByRole/teacher')
         setTeacherList(response.data)
         console.log(response.data)
     }
