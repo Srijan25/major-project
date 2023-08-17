@@ -4,6 +4,60 @@ import axios from "axios";
 import swal from 'sweetalert';
 
 const AddEvent = () => {
+  const handleChange = (e, field) => {
+    setData({ ...data, [field]: e.target.value });
+    };
+
+const [data, setData] = useState({
+  eventsTitle: "",
+    eventsDescription: "",
+    eventsDate: "",
+    eventsImage: "",
+});
+
+ const submitForm = (e) => {
+    e.preventDefault();
+    axios.post("http://localhost:8080/api/events/create", data).then((res) => {
+    console.log(res.data);
+    const eventsId = res.data.eventsId;
+    const formData = new FormData();
+    formData.append("image", photo);
+    axios.post("http://localhost:8080/api/events/event/img_upload/"+eventsId, formData)
+    .then((res) => {
+        console.log(res);
+        swal("Success", "Event Created Successfully", "success");
+    })
+    .catch((err) => {
+        console.log(err);
+        swal("Error", "Event Already Exists", "error");
+    });
+    })
+    .catch((err) => {
+    console.log(err);
+    swal("Error", "Event Already Exists", "error");
+    });
+
+    };
+
+    const [photo, setPhoto] = useState("");
+    const onFileChange = (e) => {
+        setPhoto(e.target.files[0]);
+    };
+
+    useEffect(() => {
+        console.log(data);
+    }, [data]);
+
+
+        
+    
+
+
+
+
+
+    
+    
     return (
         <>
         <header>
@@ -12,7 +66,7 @@ const AddEvent = () => {
           </h1>
           
         </header>
-        <form id="survey=-form">
+        <form id="survey=-form" onSubmit={submitForm}>
           <fieldset>
             <label id="name_and_surname-label" htmlFor="name_and_surname">
               Title
@@ -23,6 +77,9 @@ const AddEvent = () => {
               placeholder="Your answer"
               required=""
               className="form-control"
+              onChange={(e) => handleChange(e, "eventsTitle")}
+              value={data.eventsTitle}
+              
             />
           </fieldset>
           
@@ -35,6 +92,8 @@ const AddEvent = () => {
               placeholder="Your answer"
               className="input-textarea"
               defaultValue={""}
+              onChange={(e) => handleChange(e, "eventsDescription")}
+              value={data.eventsDescription}
             />
           </fieldset>
   
@@ -48,6 +107,8 @@ const AddEvent = () => {
                   placeholder="Your answer"
                   required=""
                   className="form-control"
+                  onChange={(e) => handleChange(e, "eventsDate")}
+                  value={data.eventsDate}
               />
           </fieldset>
           <fieldset>
@@ -60,13 +121,15 @@ const AddEvent = () => {
                     placeholder="Your answer"
                     required=""
                     className="form-control"
+                    onChange={onFileChange}
+
                 />
             </fieldset>
             
           
   
           <fieldset>
-            <button type="submit" id="submit" className="submit-button">
+            <button on type="submit" id="submit" className="submit-button">
               Submit
             </button>
           </fieldset>
