@@ -2,8 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import useRazorpay from "react-razorpay";
 import "./styles/student.css";
+import axios from "axios";
 import swal from 'sweetalert';
 const student = () => {
+  const userId = window.localStorage.getItem("userId");
   const PayByRazorPay = () => {
     const options = {
       key: "rzp_test_QvfhRP9slPcend",
@@ -17,6 +19,10 @@ const student = () => {
         console.log(response.razorpay_payment_id);
         console.log(response.razorpay_order_id);
         console.log(response.razorpay_signature);
+        axios.put("http://localhost:8080/api/users/user/feeStatusUpdate/"+userId+"/1" ).then((res) => {
+          console.log(res.data);
+        });
+
         swal.fire({
           title: "Payment Successfull",
           text: "Payment Id: " + response.razorpay_payment_id,
