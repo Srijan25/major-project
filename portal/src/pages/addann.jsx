@@ -17,7 +17,7 @@ const AddAnn = () => {
 
     const submitForm = (e) => {
         e.preventDefault();
-        axios.post("http://localhost:8080/api/announcements/create", data).then((res) => {
+        axios.post("http://localhost:8080/api/ann/create", data).then((res) => {
             console.log(res.data);
             swal("Success", "Announcement Created Successfully", "success");
         })

@@ -39,6 +39,7 @@ const StudentList = () => {
                   <th>Email Id</th>
                   <th>Phone No.</th>
                   <th>Semester</th>
+                  <th>Fees Status</th>
                 </tr>
               </thead>
             </table>
@@ -54,6 +55,7 @@ const StudentList = () => {
                         <td>{teacher.emailId}</td>
                         <td>{teacher.mobileNumber}</td>
                         <td>{teacher.semester}</td>
+                        <td>{teacher.feesStatus}</td>
                     </tr>
                 ))}
                 
