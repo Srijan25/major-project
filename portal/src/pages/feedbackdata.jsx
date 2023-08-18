@@ -4,7 +4,14 @@ import axios from "axios";
 
 const FeedbackData = () => {
   const [feedback, setFeedback] = useState([]);
+  const id = window.localStorage.getItem("userId");
   const fetchdata = () => {
+    if(window.localStorage.getRole === "teacher"){
+      axios.get("http://localhost:8080/api/feedback/viewByTeacher/"+id).then((res) => {
+        console.log(res.data);
+        setFeedback(res.data);
+    });
+    }
     axios.get("http://localhost:8080/api/feedback/all").then((res) => {
       console.log(res.data);
       setFeedback(res.data);

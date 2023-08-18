@@ -108,7 +108,7 @@ const [data, setData] = useState({
                   required=""
                   className="form-control"
                   onChange={(e) => handleChange(e, "eventsDate")}
-                  value={data.eventsDate}
+                  value={data.eventsDate.slice(0,10)}
               />
           </fieldset>
           <fieldset>

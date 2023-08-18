@@ -82,7 +82,7 @@ const AddAnn = () => {
                 required=""
                 className="form-control"
                 onChange={(e) => handleChange(e, "date")}
-                value={data.date}
+                value={data.date.slice(0,10)}
             />
         </fieldset>
         

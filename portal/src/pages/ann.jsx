@@ -1,12 +1,32 @@
-import React from 'react';
+import React,{useEffect,useState} from 'react';
 import AutoScrollBox from './AutoScolledBox';
 import './styles/ann.css';
+import axios from 'axios';
 const Ann = () => {
+
+  const [data, setData] = useState([]);
+
+  const getData = () => {
+    axios.get("http://localhost:8080/api/ann/view").then((res) => {
+      console.log(res.data);
+      setData(res.data);
+    });
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
+
   const paragraphs = [
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.',
-    'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.',
-    // Add more paragraphs here
+    data.map((item) => {
+      return (
+        <>
+          <h1>{item.title}</h1>
+          <p>{item.description}</p>
+          <p>{item.date.slice(0,10)}</p>
+        </>
+      );
+    }),
   ];
 
   return (
