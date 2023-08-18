@@ -91,23 +91,26 @@ useEffect(() => {
           />
         </fieldset>
 
+
+
         <fieldset>
           <p className="pform">Practical Implementation</p>
-          <label htmlFor="facebook-ad">
+          <label htmlFor="pi">
             <input
               type="radio"
-              name="ad"
+              
               id="facebook-ad"
               defaultValue="Bad"
               className="input-radio"
               onChange={(e) => handleChange(e, "parameter1")}
+              name="pi"
             />
             Bad
           </label>
-          <label htmlFor="twitter-ad">
+          <label htmlFor="pi">
             <input
               type="radio"
-              name="ad"
+              name="pi"
               id="twitter-ad"
               defaultValue="Good"
               className="input-radio"
@@ -116,10 +119,10 @@ useEffect(() => {
             />
             Good
           </label>
-          <label htmlFor="youtube-ad">
+          <label htmlFor="pi">
             <input
               type="radio"
-              name="ad"
+              name="pi"
               id="youtube-ad"
               defaultValue="Very Good"
               className="input-radio"
@@ -128,10 +131,10 @@ useEffect(() => {
             Very Good
           </label>
 
-          <label htmlFor="youtube-ad">
+          <label htmlFor="pi">
             <input
               type="radio"
-              name="ad"
+              name="pi"
               id="youtube-ad"
               defaultValue="Excellent"
               className="input-radio"
@@ -142,24 +145,13 @@ useEffect(() => {
         </fieldset>
         
 
-        <fieldset>
-          <p className="pform">Have an additional question or comment?</p>
-          <textarea
-            id="comments"
-            name="comments"
-            placeholder="Your answer"
-            className="input-textarea"
-            defaultValue={""}
-            onChange={(e) => handleChange(e, "message")}
-            value={data.message}
-          />
-        </fieldset>
+        
         <fieldset>
           <p className="pform">Teaching Methodology</p>
-          <label htmlFor="facebook-ad">
+          <label htmlFor="tm">
             <input
               type="radio"
-              name="ad"
+              name="tm"
               id="facebook-ad"  
               defaultValue="Bad"
               className="input-radio"
@@ -167,10 +159,10 @@ useEffect(() => {
             />
             Bad
           </label>
-          <label htmlFor="twitter-ad">
+          <label htmlFor="tm">
             <input
               type="radio"
-              name="ad"
+              name="tm"
               id="twitter-ad"
               defaultValue="Good"
               className="input-radio"
@@ -178,10 +170,10 @@ useEffect(() => {
             />
             Good
           </label>
-          <label htmlFor="youtube-ad">
+          <label htmlFor="tm">
             <input
               type="radio"
-              name="ad"
+              name="tm"
               id="youtube-ad"
               defaultValue="Very Good"
               className="input-radio"
@@ -190,10 +182,10 @@ useEffect(() => {
             Very Good
           </label>
 
-          <label htmlFor="youtube-ad">
+          <label htmlFor="tm">
             <input
               type="radio"
-              name="ad"
+              name="tm"
               id="youtube-ad"
               defaultValue="Excellent"
               className="input-radio"
@@ -204,10 +196,10 @@ useEffect(() => {
         </fieldset>
         <fieldset>
           <p className="pform">Communication Skills</p>
-          <label htmlFor="facebook-ad">
+          <label htmlFor="cs">
             <input
               type="radio"
-              name="ad"
+              name="cs"
               id="facebook-ad"
               defaultValue="Bad"
               className="input-radio"
@@ -215,10 +207,10 @@ useEffect(() => {
             />
             Bad
           </label>
-          <label htmlFor="twitter-ad">
+          <label htmlFor="cs">
             <input
               type="radio"
-              name="ad"
+              name="cs"
               id="twitter-ad"
               defaultValue="Good"
               className="input-radio"
@@ -226,10 +218,10 @@ useEffect(() => {
             />
             Good
           </label>
-          <label htmlFor="youtube-ad">
+          <label htmlFor="cs">
             <input
               type="radio"
-              name="ad"
+              name="cs"
               id="youtube-ad"
               defaultValue="Very Good"
               className="input-radio"
@@ -238,10 +230,10 @@ useEffect(() => {
             Very Good
           </label>
 
-          <label htmlFor="youtube-ad">
+          <label htmlFor="cs">
             <input
               type="radio"
-              name="ad"
+              name="cs"
               id="youtube-ad"
               defaultValue="Excellent"
               className="input-radio"
@@ -256,10 +248,10 @@ useEffect(() => {
 
         <fieldset>
           <p className="pform">Punctuality</p>
-          <label htmlFor="facebook-ad">
+          <label htmlFor="p">
             <input
               type="radio"
-              name="ad"
+              name="p"
               id="facebook-ad"
               defaultValue="Bad"
               className="input-radio"
@@ -267,10 +259,10 @@ useEffect(() => {
             />
             Bad
           </label>
-          <label htmlFor="twitter-ad">
+          <label htmlFor="p">
             <input
               type="radio"
-              name="ad"
+              name="p"
               id="twitter-ad"
               defaultValue="Good"
               className="input-radio"
@@ -278,10 +270,10 @@ useEffect(() => {
             />
             Good
           </label>
-          <label htmlFor="youtube-ad">
+          <label htmlFor="p">
             <input
               type="radio"
-              name="ad"
+              name="p"
               id="youtube-ad"
               defaultValue="Very Good"
               className="input-radio"
@@ -290,10 +282,10 @@ useEffect(() => {
             Very Good
           </label>
 
-          <label htmlFor="youtube-ad">
+          <label htmlFor="p">
             <input
               type="radio"
-              name="ad"
+              name="p"
               id="youtube-ad"
               defaultValue="Excellent"
               className="input-radio"
@@ -305,10 +297,10 @@ useEffect(() => {
 
         <fieldset>
           <p className="pform">Overall Rating</p>
-          <label htmlFor="facebook-ad">
+          <label htmlFor="or">
             <input
               type="radio"
-              name="ad"
+              name="or"
               id="facebook-ad"
               defaultValue="Bad"
               className="input-radio"
@@ -316,11 +308,11 @@ useEffect(() => {
             />
             Bad
           </label>
-          <label htmlFor="twitter-ad">
+          <label htmlFor="or">
             <input
 
               type="radio"
-              name="ad"
+              name="or"
               id="twitter-ad"
               defaultValue="Good"
               className="input-radio"
@@ -328,10 +320,10 @@ useEffect(() => {
             />
             Good
           </label>
-          <label htmlFor="youtube-ad">
+          <label htmlFor="or">
             <input
               type="radio"
-              name="ad"
+              name="or"
               id="youtube-ad"
               defaultValue="Very Good"
               className="input-radio"
@@ -340,10 +332,10 @@ useEffect(() => {
             Very Good
           </label>
 
-          <label htmlFor="youtube-ad">
+          <label htmlFor="or">
             <input
               type="radio"
-              name="ad"
+              name="or"
               id="youtube-ad"
               defaultValue="Excellent"
               className="input-radio"
@@ -352,7 +344,19 @@ useEffect(() => {
             Excellent
           </label>
         </fieldset>
-        
+        <fieldset>
+          <p className="pform">Have an additional question or comment?</p>
+          <textarea
+            id="comments"
+            name="comments"
+            placeholder="Your answer"
+            className="input-textarea"
+            defaultValue={""}
+            onChange={(e) => handleChange(e, "message")}
+            value={data.message}
+          />
+        </fieldset>
+
 
         <fieldset>
           <button type="submit" id="submit" className="submit-button">
