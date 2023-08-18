@@ -63,7 +63,14 @@ const Pdf = () => {
   const fetchdata = () => {
     axios.get("http://localhost:8080/api/unit/"+ unitId).then((res) => {
       console.log(res.data.notes);
+      if(res.data.notes === null)
+      {
+        setPdf([]);
+      }
+      else
+      {
       setPdf(res.data.notes);
+      }
       setUnitName(res.data.unitName);
       setUnitDesc(res.data.unitDesc);
       console.log(role
@@ -118,7 +125,7 @@ const viewPdf = (id) => {
                     return (
                       <>
 
-                <div className="solution_card">
+                <div onClick={() => viewPdf(item)} className="solution_card">
                   <div className="hover_color_bubble" />
                   <div className="so_top_icon">
                     <svg

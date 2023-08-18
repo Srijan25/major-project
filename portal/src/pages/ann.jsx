@@ -24,6 +24,8 @@ const Ann = () => {
           <h1>{item.title}</h1>
           <p>{item.description}</p>
           <p>{item.date.slice(0,10)}</p>
+          <hr style={{ width: "100%", textAlign: "center", marginLeft: 5 }} />
+
         </>
       );
     }),

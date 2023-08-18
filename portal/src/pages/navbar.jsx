@@ -10,10 +10,11 @@ const navbar = () => {
 
 	let menu = null;
 	let name = window.localStorage.getItem('name');
+	const role = window.localStorage.getItem('role');
 	if(window.localStorage.getItem('token')){
 		menu = (
 			<>
-			<li><a href="/student">{name}</a></li>
+			<li><a href={"/"+role}>{name}</a></li>
 			<li><a href="/" onClick={logout}>Logout</a></li>
 			</>
 		)

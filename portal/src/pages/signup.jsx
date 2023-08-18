@@ -156,7 +156,7 @@ const Signup = () => {
 
                 id="studentRoll"
                 onChange={(e) => handleChange(e, "studentRoll")}
-                value={data.studentRoll} required
+                value={data.studentRoll} 
                 
               />
               

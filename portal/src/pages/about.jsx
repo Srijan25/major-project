@@ -8,27 +8,13 @@ const About = () => {
     <div className="row">
       <div className="section-head col-sm-12">
         <h4>
-          <span>Why Choose</span> Us?
+          <span>About </span>  Gyan Vihar University
         </h4>
         <p>
-          When you choose us, you'll feel the benefit of 10 years' experience of
-          Web Development. Because we know the digital world and we know that
-          how to handle it. With working knowledge of online, SEO and social
-          media.
+        Vision: To become a globally renowned center of excellence that transforms generations through its commitment to innovations in education, research, entrepreneurship, critical thinking and scientific temperament.
         </p>
       </div>
-      <div className="col-lg-4 col-sm-6">
-        <div className="item">
-          {" "}
-          <span className="icon feature_box_col_one">
-            <i className="fa fa-globe" />
-          </span>
-          <h6>World Class Infrastructure</h6>
-          <p>
-          At Gyan Vihar we benchmark only against the best institutions around the world. Our faculty and senior team travel all over the globe to learn and imbibe the best practices so that we can give a solid foundation for learning.
-          </p>
-        </div>
-      </div>
+      
       <div className="col-lg-4 col-sm-6">
         <div className="item">
           {" "}
@@ -65,6 +51,18 @@ const About = () => {
           <p>
             Everyone wants to live on top of the mountain, but all the happiness
             and growth occurs while you're climbing it
+          </p>
+        </div>
+      </div>
+      <div className="col-lg-4 col-sm-6">
+        <div className="item">
+          {" "}
+          <span className="icon feature_box_col_one">
+            <i className="fa fa-globe" />
+          </span>
+          <h6>World Class Infrastructure</h6>
+          <p>
+          At Gyan Vihar we benchmark only against the best institutions around the world. Our faculty and senior team travel all over the globe to learn and imbibe the best practices so that we can give a solid foundation for learning.
           </p>
         </div>
       </div>

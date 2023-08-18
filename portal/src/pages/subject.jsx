@@ -7,10 +7,11 @@ const Subject = () => {
   
   const dept = window.localStorage.getItem("dept");
   const sem = window.localStorage.getItem("semester");
-  const teacherId = window.localStorage.getItem("teacherId");
+  const teacherId = window.localStorage.getItem("userId");
+  const role = window.localStorage.getItem("role");
 
   const fetchdata = () => {
-    if(window.localStorage.getRole === "teacher"){
+    if(role === "teacher"){
       axios.get("http://localhost:8080/api/subject/viewByTeacher/"+teacherId).then((res) => {
         console.log(res.data);
         setSubject(res.data);

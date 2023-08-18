@@ -15,15 +15,15 @@ const teacher = () => {
             </div>
           </a>
         </div>
-        {/* <div className="stu-container">
-          <a className="card1" href="subject">
-            <h3>Attendance</h3>
+        <div className="stu-container">
+          <a className="card1" href="/events">
+            <h3>Events</h3>
 
-            <div className="go-corner" href="#">
+            <div className="go-corner" href="/events">
               <div className="go-arrow">→</div>
             </div>
           </a>
-        </div> */}
+        </div>
         <div className="stu-container">
           <a className="card1" href="/feedbackdata">
             <h3>My Feedback</h3>

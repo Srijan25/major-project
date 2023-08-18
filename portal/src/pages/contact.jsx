@@ -1,7 +1,14 @@
-import React from 'react'
+import React,{useEffect,useState} from 'react'
 import './styles/contact.css';
+import axios from 'axios';
+import swal from 'sweetalert';
 
 const Contact = () => {
+
+  const submit = (e) => {
+    e.preventDefault();
+    swal("Success", "Message Sent Successfully", "success");
+  }
     return (
         <>
   <div className="contact_us">
@@ -13,7 +20,7 @@ const Contact = () => {
               <div className="col-md-10">
                 <div className="contact_form_inner">
                   <div className="contact_field">
-                    <h3>Contatc Us</h3>
+                    <h3>Contact Us</h3>
                     <p>
                       Feel Free to contact us any time. We will get back to you
                       as soon as we can!.
@@ -33,7 +40,7 @@ const Contact = () => {
                       placeholder="Message"
                       defaultValue={""}
                     />
-                    <button className="contact_form_submit">Send</button>
+                    <button className="contact_form_submit" onClick={submit} >Send</button>
                   </div>
                 </div>
               </div>
@@ -63,17 +70,16 @@ const Contact = () => {
               <h4>Contact Info</h4>
               <div className="d-flex info_single align-items-center">
                 <i className="fas fa-headset" />
-                <span>+91 8009 054294</span>
+                <span>+91 979 904 8000</span>
               </div>
               <div className="d-flex info_single align-items-center">
                 <i className="fas fa-envelope-open-text" />
-                <span>info@flightmantra.com</span>
+                <span> admissions@mygyanvihar.com</span>
               </div>
               <div className="d-flex info_single align-items-center">
                 <i className="fas fa-map-marked-alt" />
                 <span>
-                  1000+ Travel partners and 65+ Service city across India, USA,
-                  Canada &amp; UAE
+                  Gyan Vihar University, Mahal, Jagatpura, Jaipur, Rajasthan
                 </span>
               </div>
             </div>
@@ -89,10 +95,10 @@ const Contact = () => {
           <div className="map_inner">
             <h4>Find Us on Google Map</h4>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore
-              quo beatae quasi assumenda, expedita aliquam minima tenetur
-              maiores neque incidunt repellat aut voluptas hic dolorem sequi ab
-              porro, quia error.
+             Suresh Gyan Vihar University, Mahal, Jagatpura, Jaipur, Rajasthan
+             <br />
+             Top Private University in Jaipur, Rajasthan, India
+            
             </p>
             <div className="map_bind">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3560.940680638939!2d75.85985907630553!3d26.8100173644946!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396dc832568c7fad%3A0xede86f1902a9ce10!2sSuresh%20Gyan%20Vihar%20University!5e0!3m2!1sen!2sin!4v1691844340230!5m2!1sen!2sin" 
