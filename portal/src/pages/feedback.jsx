@@ -17,9 +17,18 @@ const AddFeedback = () => {
     message: "",
   });
 
-  const handleChange = (e, name) => {
-    setData({ ...data, [name]: e.target.value });
+  const handleChange = (e, field) => {
+    if (field === "feedBackFor.userId") {
+      setData({
+        ...data,
+        feedBackFor: { userId: e.target.value },
+      });
+    } else {
+      setData({ ...data, [field]: e.target.value });
+    }
   };
+
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -62,7 +71,7 @@ useEffect(() => {
           <label id="name_and_surname-label" htmlFor="name_and_surname">
             Select Teacher 
           </label>
-        <select id="teacher" name="teacher" >
+        <select id="teacher" name="teacher" onChange={(e) => handleChange(e, "feedBackFor.userId")}>
         {teacherList.map((teacher) => {
             return (
               <option 
