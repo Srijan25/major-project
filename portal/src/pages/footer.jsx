@@ -10,58 +10,51 @@ function Footer() {
       <div className="footer-sect">
         <h2>Best Institute For Education</h2>
         <p>
-          Contrary to popular belief, Lorem Ipsum is not simply random text. It
-          has roots in a piece of classical Latin literature from 45 BC, making
-          it over 2000 years old. Richard McClintock.
+        Vision: To become a globally renowned center of excellence that transforms generations through its commitment to innovations in education, research, entrepreneurship, critical thinking and scientific temperament.
         </p>
-        <img src="images/icon-fb.png" />
-        <img src="images/icon-tw.png" />
-        <img src="images/icon-in.png" />
-        <img src="images/icon-li.png" />
+        
       </div>
       <div className="footer-sect">
         <h2>Quick Links</h2>
         <ul className="footer-menu">
           <li>
-            <a href="#"> &gt; Home</a>
+            <a href="/"> &gt; Home</a>
           </li>
           <li>
-            <a href="#"> &gt; About us</a>
+            <a href="about"> &gt; About us</a>
           </li>
           <li>
-            <a href="#"> &gt; Tutorial</a>
+            <a href="/login"> &gt; Login</a>
           </li>
           <li>
-            <a href="#"> &gt; Event</a>
+            <a href="/events"> &gt; Event</a>
           </li>
           <li>
-            <a href="#"> &gt; Gallery</a>
+            <a href="/ann"> &gt; Announcement</a>
           </li>
           <li>
-            <a href="#"> &gt; Press Release</a>
+            <a href="/contact"> &gt; Contact-Us</a>
           </li>
           <li>
-            <a href="#"> &gt; Courses</a>
+            <a href="/contact"> &gt; Location</a>
           </li>
-          <li>
-            <a href="#"> &gt; Contact Us</a>
-          </li>
+          
         </ul>
       </div>
       <div className="footer-sect">
         <h2>Contact Info</h2>
         <ul className="footer-contact">
           <li>
-            <b>Email :</b> reply@bestinstituteeducation.com{" "}
+            <b>Email :</b> admissions@mygyanvihar.com{" "}
           </li>
           <li>
-            <b>Call :</b> +91 -123 456 7890{" "}
+            <b>Call :</b> +91 979 904 8000{" "}
           </li>
           <li>
-            <b>Fax :</b> +91 -123 4567890{" "}
+            <b>Fax :</b> +91 9413 345 444{" "}
           </li>
           <li>
-            <b>Website :</b> https://www.dezven.com{" "}
+            <b>Website :</b> https://www.gyanvihar.org/{" "}
           </li>
         </ul>
       </div>

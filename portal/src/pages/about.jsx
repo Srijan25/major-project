@@ -23,10 +23,9 @@ const About = () => {
           <span className="icon feature_box_col_one">
             <i className="fa fa-globe" />
           </span>
-          <h6>Modern Design</h6>
+          <h6>World Class Infrastructure</h6>
           <p>
-            We use latest technology for the latest world because we know the
-            demand of peoples.
+          At Gyan Vihar we benchmark only against the best institutions around the world. Our faculty and senior team travel all over the globe to learn and imbibe the best practices so that we can give a solid foundation for learning.
           </p>
         </div>
       </div>
@@ -49,9 +48,9 @@ const About = () => {
           <span className="icon feature_box_col_three">
             <i className="fa fa-hourglass-half" />
           </span>
-          <h6>24 x 7 User Support</h6>
+          <h6>24 x 7  Support</h6>
           <p>
-            If our customer has any problem and any query we are always happy to
+            If you has any problem and any query we are always happy to
             help then.
           </p>
         </div>
@@ -75,11 +74,9 @@ const About = () => {
           <span className="icon feature_box_col_five">
             <i className="fa fa-upload" />
           </span>
-          <h6>Market Strategy</h6>
+          <h6>Hi-Tech Campus</h6>
           <p>
-            Holding back technology to preserve broken business models is like
-            allowing blacksmiths to veto the internal combustion engine in order
-            to protect their horseshoes.
+          All Gyan Vihar's Campus is connected to Head Office of the Campus, Jaipur over VPN Network, enabling us to transmit Live Class Rooms to all locations through e-Learning Solution and IP Cameras. Complete campus is fully Wi-Fi connect to surf the internet.
           </p>
         </div>
       </div>
@@ -89,10 +86,9 @@ const About = () => {
           <span className="icon feature_box_col_six">
             <i className="fa fa-camera" />
           </span>
-          <h6>Affordable cost</h6>
+          <h6>Top Placements</h6>
           <p>
-            Love is a special word, and I use it only when I mean it. You say
-            the word too much and it becomes cheap.
+          Biggest strength of Gyan Vihar, An unique Academic partners and Corporate Resource Centre to facilitate excellent placements to our students. Our Alumni all over the world in leading companies like Microsoft, Amazon, Red Hat, and TATA.
           </p>
         </div>
       </div>
