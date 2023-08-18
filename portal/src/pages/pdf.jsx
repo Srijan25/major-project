@@ -4,23 +4,40 @@ import "./styles/pdf.css";
 import { useParams } from "react-router-dom";
 
 const Pdf = () => {
+
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    const formData = new FormData();
+    formData.append("note", file);
+    axios.post("http://localhost:8080/api/unit/notes_upload/"+unitId, formData).then((res) => {
+      console.log(res.data);
+      window.location.reload();
+    });
+  };
+
+  useEffect(() => {
+    fetchdata();
+  }, []);
+
+
   const { id } = useParams();
   const unitId = id;
   const role = window.localStorage.getItem("role");
-  let uploadPdf = null;
+  console.log(role);
+  let uploadPdf ;
   if (role === "teacher") {
     uploadPdf = (
       <>
       <div className="formbold-main-wrapper">
         {/* Author: FormBold Team */}
         {/* Learn More: https://formbold.com */}
-        <div className="formbold-form-wrapper">
+        <form className="formbold-form-wrapper">
           <div className="mb-6 pt-4">
             <label className="formbold-form-label formbold-form-label-2">
               Upload File
             </label>
             <div className="formbold-mb-5 formbold-file-input">
-              <input type="file" name="file" id="file" />
+              <input type="file" name="file" id="file" onChange={handleFileChange} />
               <label htmlFor="file">
                 <div>
                   <span className="formbold-drop-file"> Drop files here </span>
@@ -33,7 +50,7 @@ const Pdf = () => {
               <button className="formbold-btn w-full">Send File</button>
             </div>
           </div>
-        </div>
+        </form>
       </div>
       </>
     );
@@ -49,7 +66,10 @@ const Pdf = () => {
       setPdf(res.data.notes);
       setUnitName(res.data.unitName);
       setUnitDesc(res.data.unitDesc);
+      console.log(role
+        );
     });
+  
 
   };
 
@@ -83,6 +103,18 @@ const viewPdf = (id) => {
 
                 {
                   pdf.map((item) => {
+                    if(pdf.length === 0)
+                    {
+                      return (
+                        <>
+                        <h2>
+                          No Notes Uploaded
+                        </h2>
+                        </>
+                      )
+                    }
+                    else
+                    {
                     return (
                       <>
 
@@ -182,6 +214,7 @@ const viewPdf = (id) => {
                 </div>
                 </>
               );
+                    }
             })}
                 
               </div>
